@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Configures the Camel Context-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+
+  <!--Bean for the File Builder -->
+  <bean class="com.learn.spring.camel.copyfiles.FileRouteBuilder" id="fileRouteBuilder"/>
+  <bean class="com.learn.spring.camel.ftp.FTPFileCopy" id="ftpFileCopy"/>
+
+  <camelContext xmlns="http://camel.apache.org/schema/spring">
+
+    <!--***************************************** Route Reference for the bean *****************************************-->
+    <!--routeBuilder ref="fileRouteBuilder" /-->
+    <routeBuilder ref="ftpFileCopy" />
+
+
+  </camelContext>
+
+</beans>
