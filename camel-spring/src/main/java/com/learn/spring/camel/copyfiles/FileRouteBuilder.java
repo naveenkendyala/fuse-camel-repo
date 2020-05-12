@@ -8,7 +8,7 @@ public class FileRouteBuilder extends RouteBuilder {
     public void configure() throws Exception {
 
         //Hover over the attributes for more details on documentation
-        from("file://src/data/copyfiles/incoming?include=message.*xml")
+        from("file://src/data/copyfiles/incoming?noop=true&include=message.*xml")
         .routeId("route-copyfiles")
         .to("file://src/data/copyfiles/outgoing?fileExist=Override");
 

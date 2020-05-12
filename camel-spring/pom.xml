@@ -27,10 +27,14 @@
   </dependencyManagement>
 
   <dependencies>
+
+    <!--Camel Core Dependency-->
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-core</artifactId>
     </dependency>
+
+    <!--The Spring Framework integration dependency-->
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-spring</artifactId>
@@ -59,8 +63,7 @@
       <artifactId>camel-ftp</artifactId>
     </dependency>
 
-
-    <!-- logging -->
+    <!-- Logging -->
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-api</artifactId>
@@ -77,7 +80,7 @@
       <scope>runtime</scope>
     </dependency>
 
-    <!-- testing -->
+    <!-- Testing -->
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-test-spring</artifactId>
@@ -88,7 +91,6 @@
 
   <build>
     <defaultGoal>install</defaultGoal>
-
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -108,7 +110,7 @@
         </configuration>
       </plugin>
 
-      <!-- allows the route to be ran via 'mvn camel:run' -->
+      <!-- Allows the route to be ran via 'mvn camel:run'. Without the version number, there will be warnings on the console -->
       <plugin>
         <groupId>org.apache.camel</groupId>
         <artifactId>camel-maven-plugin</artifactId>
