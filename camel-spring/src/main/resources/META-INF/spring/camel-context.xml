@@ -8,17 +8,18 @@
        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
 
 
-  <!--Bean for the File Builder -->
+  <!--Bean & Context for File Builder -->
   <bean class="com.learn.spring.camel.copyfiles.FileRouteBuilder" id="fileRouteBuilder"/>
-  <bean class="com.learn.spring.camel.ftp.FTPFileCopy" id="ftpFileCopy"/>
-
   <camelContext xmlns="http://camel.apache.org/schema/spring">
-
-    <!--***************************************** Route Reference for the bean *****************************************-->
-    <!--routeBuilder ref="fileRouteBuilder" /-->
-    <routeBuilder ref="ftpFileCopy" />
-
-
+    <routeBuilder ref="fileRouteBuilder" />
   </camelContext>
+
+  <!--Bean & Context for FTP File
+  <bean class="com.learn.spring.camel.ftp.FTPFileCopy" id="ftpFileCopy"/>
+  <camelContext xmlns="http://camel.apache.org/schema/spring">
+    <routeBuilder ref="ftpFileCopy" />
+  </camelContext>
+  -->
+  
 
 </beans>
