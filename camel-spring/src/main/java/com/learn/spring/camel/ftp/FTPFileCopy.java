@@ -7,10 +7,17 @@ public class FTPFileCopy extends RouteBuilder{
     @Override
     public void configure() throws Exception {
 
-        from("ftp://speedtest.tele2.net?include=1KB.*zip")
+        //Consumer Information
+        from("ftp://speedtest.tele2.net?noop=true&include=1KB.*zip")
+
+        //Establish a name to the Route
         .routeId("route-ftpfilecopy")
+        
+        //Dump the Exchange Log Information using the processor
+        .process(new ExchangePrinter())
+        
+        //Producer
         .to("file://src/data/ftp");
 
     }
-
 }
