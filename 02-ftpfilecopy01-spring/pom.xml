@@ -1,10 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.learn.spring.camel</groupId>
-  <artifactId>camel-spring</artifactId>
+
+  <groupId>com.learncamel.spring</groupId>
+  <artifactId>02-ftpfilecopy01-spring</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
+
   <name>A Camel Spring Route</name>
 
   <properties>
@@ -27,7 +30,6 @@
   </dependencyManagement>
 
   <dependencies>
-
     <!--Camel Core Dependency-->
     <dependency>
       <groupId>org.apache.camel</groupId>
@@ -39,6 +41,13 @@
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-spring</artifactId>
     </dependency>
+
+    <!-- Dependency for the Camel FTP-->
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-ftp</artifactId>
+    </dependency>
+
 
     <!--Explicit Jaxb Dependency for Camel :: When Using Java11-->
     <dependency>
@@ -57,13 +66,7 @@
       <version>2.3.2</version>
     </dependency>
 
-    <!-- Dependency for the Camel FTP-->
-    <dependency>
-      <groupId>org.apache.camel</groupId>
-      <artifactId>camel-ftp</artifactId>
-    </dependency>
-
-    <!-- Logging -->
+    <!-- logging -->
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-api</artifactId>
@@ -80,7 +83,7 @@
       <scope>runtime</scope>
     </dependency>
 
-    <!-- Testing -->
+    <!-- testing -->
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-test-spring</artifactId>
@@ -91,6 +94,7 @@
 
   <build>
     <defaultGoal>install</defaultGoal>
+
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -110,7 +114,7 @@
         </configuration>
       </plugin>
 
-      <!-- Allows the route to be ran via 'mvn camel:run'. Without the version number, there will be warnings on the console -->
+      <!-- allows the route to be ran via 'mvn camel:run' -->
       <plugin>
         <groupId>org.apache.camel</groupId>
         <artifactId>camel-maven-plugin</artifactId>

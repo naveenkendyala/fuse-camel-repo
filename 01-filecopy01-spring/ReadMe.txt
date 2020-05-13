@@ -2,14 +2,11 @@ Camel Router Spring Project
 ===========================
 
 To build this project use
-
-    mvn install
+mvn install
 
 To run this project with Maven use
-
-    mvn camel:run
+mvn camel:run
 
 For more help see the Apache Camel documentation
-
-    http://camel.apache.org/
+http://camel.apache.org/
 

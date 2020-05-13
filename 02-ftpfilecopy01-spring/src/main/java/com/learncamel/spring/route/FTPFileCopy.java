@@ -1,4 +1,4 @@
-package com.learn.spring.camel.ftp;
+package com.learncamel.spring.route;
 
 import org.apache.camel.builder.RouteBuilder;
 
@@ -12,12 +12,9 @@ public class FTPFileCopy extends RouteBuilder{
 
         //Establish a name to the Route
         .routeId("route-ftpfilecopy")
-        
-        //Dump the Exchange Log Information using the processor
-        .process(new ExchangePrinter())
-        
+                
         //Producer
-        .to("file://src/data/ftp");
+        .to("file://src/data/outgoing");
 
     }
 }
