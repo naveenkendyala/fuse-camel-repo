@@ -3,6 +3,7 @@ Description: Camel Spring + Copy Files On Local Machine
 Logging                         : None
 Exception Handling              : None
 Processors                      : None
+Enterprise Integration Patterns : None
 #****************************************************************************************************************
 
 To build this project use

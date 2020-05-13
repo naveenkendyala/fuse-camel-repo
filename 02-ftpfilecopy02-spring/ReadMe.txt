@@ -1,7 +1,7 @@
 #****************************************************************************************************************
 Description                     : Camel Spring + FTP Files to Local Machine
 Logging                         : None
-Exception Handling              : None
+Exception Handling              : YES. Handles the Exceptions Gracefully
 Processors                      : None
 Enterprise Integration Patterns : None
 #****************************************************************************************************************
