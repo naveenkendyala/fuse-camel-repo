@@ -14,7 +14,7 @@ public class FTPFileCopy extends RouteBuilder{
         .routeId("route-ftpfilecopy")
                 
         //Producer
-        .to("file://src/data/outgoing");
+        .to("file://src/data/ftp");
 
     }
 }

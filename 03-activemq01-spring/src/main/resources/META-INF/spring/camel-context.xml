@@ -5,10 +5,14 @@
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
 
+  <bean id="activemq" class="org.apache.camel.component.activemq.ActiveMQComponent">
+    <property name="brokerURL" value="tcp://localhost:61616" />
+  </bean>
+
   <!-- Register Route as Spring Bean :: Bean & Context    -->
-  <bean class="com.learncamel.spring.route.FTPFileCopy" id="ftpFileCopy" />
+  <bean class="com.learncamel.spring.route.MsgActiveMQ" id="msgActiveMQ" />
   <camelContext xmlns="http://camel.apache.org/schema/spring">
-    <routeBuilder ref="ftpFileCopy" />
+    <routeBuilder ref="msgActiveMQ" />
   </camelContext>
 
 </beans>

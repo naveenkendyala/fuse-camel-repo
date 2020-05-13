@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.learncamel.spring</groupId>
-  <artifactId>02-ftpfilecopy02-spring</artifactId>
+  <artifactId>03-activemq01-spring</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
 
@@ -30,12 +30,6 @@
 
   <dependencies>
 
-    <dependency>
-      <groupId>org.apache.camel</groupId>
-      <artifactId>camel-activemq</artifactId>
-    </dependency>
-
-
     <!--Camel Core Dependency-->
     <dependency>
       <groupId>org.apache.camel</groupId>
@@ -48,10 +42,10 @@
       <artifactId>camel-spring</artifactId>
     </dependency>
 
-    <!-- Dependency for the Camel FTP-->
+    <!--Dependency for the Active MQ-->
     <dependency>
       <groupId>org.apache.camel</groupId>
-      <artifactId>camel-ftp</artifactId>
+      <artifactId>camel-activemq</artifactId>
     </dependency>
 
 
@@ -71,7 +65,6 @@
       <artifactId>jaxb-impl</artifactId>
       <version>2.3.2</version>
     </dependency>
-
 
     <!-- logging -->
     <dependency>

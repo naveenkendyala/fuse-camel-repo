@@ -7,21 +7,10 @@ public class FTPFileCopy extends RouteBuilder{
     @Override
     public void configure() throws Exception {
 
-        onException(ValidationException.class)
-        .handled(true);
+        from("ftp://speedtest.tele2.net?include=1KB.*zip")              //Consumer Information
+        .routeId("route-ftpfilecopy")                                   //Establish a name to the Route
+        .to("file://src/data/outgoing?fileExist=Fail");                 //Producer. Create an Error when the file is already present
 
-
-        //Consumer Information
-        from("ftp://speedtest.tele2.net?include=1KB.*zip")
-
-        //Establish a name to the Route
-        .routeId("route-ftpfilecopy")
-                
-        //Producer
-        // Create an Error when the file is already present
-        .to("file://src/data/outgoing?fileExist=Fail");
-
-        //Add Exception Handling        
 
     }
 }
